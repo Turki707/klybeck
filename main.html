@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klybeck Company Learning System</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fa;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+
+    header img {
+      max-height: 55px;
+    }
+
+    /* TITLE SECTION */
+    .background {
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .background h1 {
+      color: #333;
+      font-size: 2.6rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .category {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      width: 220px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .category img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .category h2 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: #222;
+    }
+
+    /* BACK BUTTON */
+    .back-button {
+      display: block;
+      margin: 30px auto 60px;
+      padding: 12px 30px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #217dbb;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+      }
+
+      header {
+        flex-direction: row; 
+        gap: 10px;
+        align-items: center;
+        justify-content: center; /* توسيط الهيدر */
+      }
+
+      header img {
+        max-height: 35px; /* تصغير الصور في الجوال */
+      }
+
+      .background {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .marquee {
+        font-size: 14px;
+      }
+    }
+     footer {
+  
+      text-align: center;
+      padding: 15px;
+    }
+
+    footer img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="res/logo.png" alt="Logo 1" />
+    <img src="res/Oraclejde.png" alt="Logo 2" />
+  </header>
+
+  <!-- TITLE -->
+  <div class="background">
+    <h1>Select the Section</h1>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="categories">
+    <div class="category" onclick="navigateToPage('HR-Main.html', 'hr_password')">
+      <img src="res/hr_courses_image.png" alt="HR Courses">
+      <h2>HR Courses</h2>
+    </div>
+    <div class="category" onclick="navigateToPage('Acc-Main.html', 'accounting_password')">
+      <img src="res/accounting_courses_image.jpeg" alt="Accounting Courses">
+      <h2>Accounting Courses</h2>
+    </div>
+    <div class="category" onclick="navigateToPage('Sales-main.html', 'Sales_password')">
+      <img src="res/sales_courses .png" alt="Sales Courses">
+      <h2>Sales Courses</h2>
+    </div>
+    <div class="category" onclick="navigateToPage('Legal-Main.html', 'Legal_password')">
+      <img src="res/legal.png" alt="Legal Courses">
+      <h2>Legal Courses</h2>
+    </div>
+    <div class="category" onclick="navigateToPage('Support-Main.html', 'Support Services_password')">
+      <img src="res/Sup.png" alt="Support Services Courses">
+      <h2>Support Services</h2>
+    </div>
+    <div class="category" onclick="navigateToPage('IT-Main.html', 'IT_password')">
+      <img src="res/IT.png" alt="IT Courses">
+      <h2>IT Courses</h2>
+    </div>
+    <div class="category" onclick="navigateToPage('ESS-Main.html', 'ESS_password')">
+      <img src="res/ESS.png" alt="ESS Courses">
+      <h2>ESS Portal</h2>
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <button class="back-button" onclick="goBack()">Back to Home</button>
+   <footer>
+    <img src="res/Artboard 3- Footer.png" alt="Footer Image">
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    
+    function goBack() {
+      window.location.href = "index.html";
+    }
+
+    function navigateToPage(page, passwordKey) {
+      const userPassword = prompt("Enter Password:");
+      const validPassword = localStorage.getItem(passwordKey);
+      if (userPassword === validPassword) {
+        window.location.href = page;
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+  </script>
+ 
+
+    <script>
+        var categoryPasswords = {
+            'HR-Main.html': '987',
+            'Acc-Main.html': '456',
+			      'Sales-main.html' : '111',
+			      'Legal-Main.html': '555', 
+			      'Support-Main.html':'258', 
+			      'IT-Main.html':'147',
+			      'ESS-Main.html':'159'
+        };
+
+        function navigateToPage(page, correctPassword) {
+            var password = prompt('Enter the password for this category:');
+            
+            if (password === categoryPasswords[page]) {
+                window.location.href = page;  // Redirect to the specified page
+            } else {
+                alert('Incorrect password. Access denied.');
+            }
+        }
+
+        function goBack() {
+            // Implement your logic to go back to the home page
+            window.location.href = 'index.html';  // Redirect to index.html
+        }
+         
+    </script>
+   
+</body>
+</html>

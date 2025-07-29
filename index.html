@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klybeck Company Learning System</title>
+  <style>
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    header img {
+      max-height: 50px;
+    }
+
+    .background {
+      background-image: url('your-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .background img {
+      max-height: 100px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #000000;
+      min-height: 50px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      color: #333;
+    }
+
+    .cta-button {
+      padding: 14px 30px;
+      font-size: 1rem;
+      background-color: #005eff;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #0047cc;
+    }
+
+    .marquee {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: #000000;
+      white-space: nowrap;
+      animation: marqueeAnimation 12s linear infinite;
+    }
+
+    @keyframes marqueeAnimation {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+      }
+
+      header {
+        flex-direction: row; 
+        gap: 10px;
+        align-items: center;
+        justify-content: center; /* توسيط الهيدر */
+      }
+
+      header img {
+        max-height: 35px; /* تصغير الصور في الجوال */
+      }
+
+      .background {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+
+      .marquee {
+        font-size: 14px;
+      }
+    }
+ 
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="res/logo.png" alt="Logo 1" />
+    <img src="res/Oraclejde.png" alt="Logo 2" class="Logo2" />
+  </header>
+
+  <div class="background">
+    <img src="res/logo.png" alt="Centered Logo" />
+  </div>
+
+  <div class="container">
+    <h1 id="typed-title"></h1>
+    <p>Empower your team with our innovative and dynamic learning platform, tailored to grow your skills and performance.</p>
+
+    <a href="https://jde.klybeckjde.com/jde/E1Menu.maf" class="cta-button">Oracle System</a>
+    <a href="main.html" class="cta-button">Get Started</a>
+  </div>
+
+  <div class="marquee">Enhance Your Skills with Our Learning Platform | Join Now and Grow</div>
+
+  <!-- JavaScript for Typewriter Effect -->
+  <script>
+    const text = "Welcome to our Learning System";
+    const target = document.getElementById("typed-title");
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        target.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 70);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
